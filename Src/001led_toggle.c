@@ -1,8 +1,9 @@
 /*
  * 001led_toggle.c
- *
+ *	
  *  Created on: Jan 13, 2023
  *      Author: Sayeed Reza Alawi
+ * LED toggling
  */
 
 
