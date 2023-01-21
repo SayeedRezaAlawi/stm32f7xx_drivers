@@ -3,13 +3,10 @@
  *	
  *  Created on: Jan 13, 2023
  *      Author: Sayeed Reza Alawi
-<<<<<<< HEAD
  * LED toggling
  * toggle
-=======
  * toggle leds
  * leds
->>>>>>> develop
  */
 
 
