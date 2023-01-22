@@ -96,6 +96,15 @@ typedef struct
 #define USART_HW_FLOW_CTRL_CTS_RTS			3
 
 
+/*
+ * USART flags
+ */
+
+#define USART_FLAG_TXE 			( 1 << USART_ISR_TXE)
+#define USART_FLAG_RXNE 		( 1 << USART_ISR_RXNE)
+#define USART_FLAG_TC 			( 1 << USART_ISR_TC)
+
+
 /******************************************************************************************
  *								APIs supported by this driver
  *		 For more information about the APIs check the function definitions
@@ -115,8 +124,8 @@ void USART_DeInit(HAL_USART_RegDef_t* pUSARTx);
 /*
  * Data Send and Receive
  */
-void USART_SendData(HAL_USART_RegDef_t *pUSARTx, uint8_t *pTxBuffer, uint8_t Len);
-void USART_ReceiveData(HAL_USART_RegDef_t *pUSARTx, uint8_t *pRxBuffer, uint8_t Len);
+void USART_SendData(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t Len);
+void USART_ReceiveData(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint8_t Len);
 
 uint8_t USART_SendDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pTxBuffer, uint8_t Len);
 uint8_t USART_ReceiveDataIT(USART_Handle_t *pUSARTHandle, uint8_t *pRxBuffer, uint8_t Len);
@@ -133,9 +142,9 @@ void USART_IRQHandling(USART_Handle_t *pUSARTHandle);
  * Other Peripheral Control APIs
  */
 void USART_PeripheralControl(HAL_USART_RegDef_t *pUSARTx, uint8_t EnorDi);
-uint8_t USART_GetFlagStatus(HAL_USART_RegDef_t *pUSARTx, uint32_t FlagName);
+uint8_t USART_GetFlagStatus(HAL_USART_RegDef_t *pUSARTx, uint8_t StatusFlagName);
 void USART_ClearFlag(HAL_USART_RegDef_t *pUSARTx, uint16_t StatusFlagName);
-
+void USART_SetBaudRate(HAL_USART_RegDef_t *pUSARTx, uint32_t BaudRate);
 
 /*
  * Application callback
