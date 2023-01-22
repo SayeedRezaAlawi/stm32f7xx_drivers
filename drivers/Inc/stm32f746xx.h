@@ -189,6 +189,26 @@ typedef struct
 	__vo uint32_t AFR[2];		/*GPIO alternate function low and high registers		address offset 0x20, 0x24*/
 }HAL_GPIO_RegDef_t;
 
+/****************************peripheral register definition structures ************/
+/*
+ * Note: Registers of USART peripheral are specific to MCU
+ */
+
+typedef struct
+{
+	__vo uint32_t CR1;			/*GPIO port mode register								address offset 0x00*/
+	__vo uint32_t CR2;			/*GPIO port output type register						address offset 0x04*/
+	__vo uint32_t CR3;			/*GPIO port output speed register						address offset 0x08*/
+	__vo uint32_t BRR;			/*GPIO port pull-up/pull-down register					address offset 0x0C*/
+	__vo uint32_t GTPR;			/*GPIO port input data register					    	address offset 0x10*/
+	__vo uint32_t RTOR;			/*GPIO port output data register						address offset 0x14*/
+	__vo uint32_t RQR;			/*GPIO port bit set/reset register						address offset 0x18*/
+	__vo uint32_t ISR;			/*GPIO port configuration clock register			 	address offset 0x1C*/
+	__vo uint32_t ICR;			/*GPIO alternate function low and high registers		address offset 0x20*/
+	__vo uint32_t RDR;			/*GPIO alternate function low and high registers		address offset 0x24*/
+	__vo uint32_t TDR;			/*GPIO alternate function low and high registers		address offset 0x28*/
+}HAL_USART_RegDef_t;
+
 
 /****************************peripheral register definition structures ************/
 /*
@@ -281,6 +301,17 @@ typedef struct
 #define EXTI							((HAL_EXTI_RegDef_t*)HAL_EXTI_BASEADDR)
 
 #define SYSCFG							((HAL_SYSCFG_RegDef_t*)HAL_SYSCFG_BASEADDR)
+
+
+#define USART1 							((HAL_USART_RegDef_t*)HAL_USART1_BASEADDR)
+#define USART2 							((HAL_USART_RegDef_t*)HAL_USART2_BASEADDR)
+#define USART3 							((HAL_USART_RegDef_t*)HAL_USART3_BASEADDR)
+#define UART4 							((HAL_USART_RegDef_t*)HAL_UART4_BASEADDR)
+#define UART5 							((HAL_USART_RegDef_t*)HAL_UART5_BASEADDR)
+#define USART6 							((HAL_USART_RegDef_t*)HAL_USART6_BASEADDR)
+#define UART7 							((HAL_USART_RegDef_t*)HAL_UART7_BASEADDR)
+#define UART8 							((HAL_USART_RegDef_t*)HAL_UART8_BASEADDR)
+
 /*
  * Clock Enable Macros for GPIOx peripherals
  */
