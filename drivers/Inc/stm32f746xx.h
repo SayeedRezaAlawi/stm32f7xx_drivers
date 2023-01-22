@@ -585,4 +585,108 @@ typedef struct
 #define UART8_REG_RESET()		do{(RCC->APB1RSTR |= (1 << 31));\
 								   (RCC->APB1RSTR &= ~(1 << 31));}while(0)
 
+
+/******************************************************************************************
+ *Bit position definitions of USART peripheral
+ ******************************************************************************************/
+
+/*
+ * Bit position definitions USART_CR1
+ */
+#define USART_CR1_UE					0
+#define USART_CR1_RE  					2
+#define USART_CR1_TE 					3
+#define USART_CR1_IDLEIE 				4
+#define USART_CR1_RXNEIE  				5
+#define USART_CR1_TCIE					6
+#define USART_CR1_TXEIE					7
+#define USART_CR1_PEIE 					8
+#define USART_CR1_PS 					9
+#define USART_CR1_PCE 					10
+#define USART_CR1_WAKE  				11
+#define USART_CR1_M0 					12
+#define USART_CR1_MME 					13
+#define USART_CR1_CMIE 					14
+#define USART_CR1_OVER8  				15
+#define USART_CR1_M1	  				28
+
+
+
+/*
+ * Bit position definitions USART_CR2
+ */
+#define USART_CR2_ADDM7   				4
+#define USART_CR2_LBDL   				5
+#define USART_CR2_LBDIE  				6
+#define USART_CR2_LBCL   				8
+#define USART_CR2_CPHA   				9
+#define USART_CR2_CPOL   				10
+#define USART_CR2_CLKEN   				11
+#define USART_CR2_STOP   				12
+#define USART_CR2_LINEN   				14
+#define USART_CR2_SWAP   				15
+#define USART_CR2_RXINV  				16
+#define USART_CR2_TXINV   				17
+#define USART_CR2_DATAINV  				18
+#define USART_CR2_MSBFIRST 				19
+#define USART_CR2_ABREN   				20
+#define USART_CR2_ABRMOD  				21
+#define USART_CR2_RTOEN  				23
+
+
+/*
+ * Bit position definitions USART_CR3
+ */
+#define USART_CR3_EIE   				0
+#define USART_CR3_IREN   				1
+#define USART_CR3_IRLP  				2
+#define USART_CR3_HDSEL   				3
+#define USART_CR3_NACK   				4
+#define USART_CR3_SCEN   				5
+#define USART_CR3_DMAR  				6
+#define USART_CR3_DMAT   				7
+#define USART_CR3_RTSE   				8
+#define USART_CR3_CTSE   				9
+#define USART_CR3_CTSIE   				10
+#define USART_CR3_ONEBIT   				11
+#define USART_CR3_OVRDIS   				12
+#define USART_CR3_DDRE  				13
+#define USART_CR3_DEM   				14
+#define USART_CR3_DEP   				15
+#define USART_CR3_SCARCT0  				17
+#define USART_CR3_SCARCNT1  			18
+#define USART_CR3_SCARCNT2 				19
+/*
+ * Bit position definitions USART_SR
+ */
+/*
+ * Bit position definitions USART_ISR
+ */
+
+#define USART_ISR_PE        				0
+#define USART_ISR_FE        				1
+#define USART_ISR_NF        				2
+#define USART_ISR_ORE       				3
+#define USART_ISR_IDLE       				4
+#define USART_ISR_RXNE        				5
+#define USART_ISR_TC        				6
+#define USART_ISR_TXE        				7
+#define USART_ISR_LBDF       				8
+#define USART_ISR_CTSIF        				9
+#define USART_ISR_CTS						10
+#define USART_ISR_RTOF        				11
+#define USART_ISR_EOBF       				12
+#define USART_ISR_ABRE        				14
+#define USART_ISR_ABRF        				15
+#define USART_ISR_BUSY       				16
+#define USART_ISR_CMF        				17
+#define USART_ISR_SBKF						18
+#define USART_ISR_RWU        				19
+#define USART_ISR_TEACK       				21
+
+#include "stm32f746xx_gpio_driver.h"
+#include "stm32f746xx_rcc_driver.h"
+#include "stm32f746xx_usart_driver.h"
+
+
 #endif /* INC_STM32F407XX_H_ */
